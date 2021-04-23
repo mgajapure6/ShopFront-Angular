@@ -1,0 +1,66 @@
+<div class="header-middle sticky-header fix-top sticky-content">
+    <div class="container">
+        <div class="header-left">
+            <a href="#" class="mobile-menu-toggle">
+                <i class="d-icon-bars2"></i>
+            </a>
+            <a href="demo3.html" class="logo">
+                <img src="assets/images/demos/demo3/logo.png" alt="logo" width="153" height="44" />
+            </a>
+            <!-- End Logo -->
+
+            <div class="header-search hs-simple">
+                <form action="#" class="input-wrapper">
+                    <input type="text" class="form-control" name="search" autocomplete="off" placeholder="Search..." required />
+                    <button class="btn btn-search" type="submit">
+                        <i class="d-icon-search"></i>
+                    </button>
+                </form>
+            </div>
+            <!-- End Header Search -->
+        </div>
+        <div class="header-right">
+            <a href="tel:#" class="icon-box icon-box-side">
+                <div class="icon-box-icon mr-0 mr-lg-2">
+                    <i class="d-icon-phone"></i>
+                </div>
+                <div class="icon-box-content d-lg-show">
+                    <h4 class="icon-box-title">Call Us Now:</h4>
+                    <p>0(800) 123-456</p>
+                </div>
+            </a>
+            <span class="divider"></span>
+            <a href="wishlist.html" class="wishlist">
+                <i class="d-icon-heart"></i>
+            </a>
+            <span class="divider"></span>
+            <div class="dropdown cart-dropdown type2 cart-offcanvas mr-0 mr-lg-2">
+                <a href="#" class="cart-toggle label-block link">
+                    <div class="cart-label d-lg-show">
+                        <span class="cart-name">Shopping Cart:</span>
+                        <span class="cart-price">Rs. {{cartValue}}</span>
+                    </div>
+                    <i class="d-icon-bag">
+                        <span class="cart-count">{{cartCount}}</span>
+                    </i>
+                </a>
+                <div class="cart-overlay"></div>
+                <!-- End Cart Toggle -->
+                <app-cart-popup></app-cart-popup>
+                <!-- End Dropdown Box -->
+            </div>
+            <div class="header-search hs-toggle mobile-search">
+                <a href="#" class="search-toggle">
+                    <i class="d-icon-search"></i>
+                </a>
+                <form action="#" class="input-wrapper">
+                    <input type="text" class="form-control" name="search" autocomplete="off" placeholder="Search your keyword..." required />
+                    <button class="btn btn-search" type="submit">
+                        <i class="d-icon-search"></i>
+                    </button>
+                </form>
+            </div>
+            <!-- End of Header Search -->
+        </div>
+    </div>
+</div>

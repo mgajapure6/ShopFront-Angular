@@ -1,0 +1,19 @@
+<div class="product product-cart">
+    <figure class="product-media">
+        <a href="#" routerLink="product-detail/product.id">
+            <img [src]="product.images[0]" alt="product" width="80" height="88" />
+        </a>
+        <button class="btn btn-link btn-close" (click)="removeFromCart(product.id)">
+            <i class="fas fa-times"></i>
+            <span class="sr-only">Close</span>
+        </button>
+    </figure>
+    <div class="product-detail">
+        <a href="#" routerLink="product-detail/product.id" class="product-name">{{product.name}}</a>
+        <div class="price-box">
+            <span class="product-quantity">{{product.qty}}</span>
+            <span class="product-price">{{product.price}}</span>
+        </div>
+    </div>
+
+</div>

@@ -1,0 +1,34 @@
+<div class="dropdown-box">
+    <div class="cart-header">
+        <h4 class="cart-title">Shopping Cart</h4>
+        <a href="#" class="btn btn-dark btn-link btn-icon-right btn-close">close
+            <i class="d-icon-arrow-right"></i>
+            <span class="sr-only">Cart</span>
+        </a>
+    </div>
+    <div class="products scrollable">
+        <p class="text-center mt-5 mb-5" *ngIf="cartProducts.length == 0">Empty Cart</p>
+        <app-cart-product-card *ngFor="let p of cartProducts" [product]="p"></app-cart-product-card>
+    </div>
+    <!-- End of Products  -->
+    <div class="cart-total" *ngIf="cartProducts.length > 0">
+        <label>Subtotal:</label>
+        <span class="price">
+            Rs. {{subTotal}}
+        </span>
+    </div>
+    <!-- End of Cart Total -->
+    <div class="cart-action" *ngIf="cartProducts.length > 0">
+        <a href="#" routerLink="shopping-cart" class="btn btn-dark btn-link">View Cart</a>
+        <a href="#" routerLink="checkout" class="btn btn-dark ">
+            <span>Go To Checkout</span>
+        </a>
+    </div>
+
+    <div class="cart-action" *ngIf="cartProducts.length == 0">
+        <a href="#" class="btn btn-dark">
+            <span>Continue Shopping</span>
+        </a>
+    </div>
+    <!-- End of Cart Action -->
+</div>
