@@ -1,3 +1,4 @@
+import { ScriptService } from './../../services/script.service';
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ProductService } from '../../services/product.service';
@@ -20,10 +21,13 @@ export class ProductDetailComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private _productService: ProductService,
-    private _cartService: CartService
+    private _cartService: CartService,
+    private _scriptService: ScriptService
   ) {}
 
   ngOnInit(): void {
+    console.log("ngOnInit app.pd");
+    this._scriptService.loadScripts();
     this.route.params.subscribe((params) => {
       this.product_id = +params['product-id']; // (+) converts string 'id' to a number
       // In a real app: dispatch action to load the details here.

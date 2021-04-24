@@ -19,14 +19,18 @@
             "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.app.json",
             "aot": true,
-            "assets": [
-              "src/favicon.ico",
-              "src/assets"
-            ],
-            "styles": [
-              "src/styles.css"
-            ],
-            "scripts": []
+            "assets": ["src/favicon.ico", "src/assets"],
+            "styles": ["src/styles.css"],
+            "scripts": [
+              "src/assets/vendor/jquery/jquery.min.js",
+              "src/assets/vendor/imagesloaded/imagesloaded.pkgd.min.js",
+              "src/assets/vendor/magnific-popup/jquery.magnific-popup.min.js",
+              "src/assets/vendor/photoswipe/photoswipe.min.js",
+              "src/assets/vendor/photoswipe/photoswipe-ui-default.min.js",
+              "src/assets/vendor/owl-carousel/owl.carousel.min.js",
+              "src/assets/vendor/elevatezoom/jquery.elevatezoom.min.js",
+              "src/assets/vendor/sticky/sticky.min.js"
+            ]
           },
           "configurations": {
             "production": {
@@ -82,13 +86,8 @@
             "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.spec.json",
             "karmaConfig": "karma.conf.js",
-            "assets": [
-              "src/favicon.ico",
-              "src/assets"
-            ],
-            "styles": [
-              "src/styles.css"
-            ],
+            "assets": ["src/favicon.ico", "src/assets"],
+            "styles": ["src/styles.css"],
             "scripts": []
           }
         },
@@ -100,9 +99,7 @@
               "tsconfig.spec.json",
               "e2e/tsconfig.json"
             ],
-            "exclude": [
-              "**/node_modules/**"
-            ]
+            "exclude": ["**/node_modules/**"]
           }
         },
         "e2e": {

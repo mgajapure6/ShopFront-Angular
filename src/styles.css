@@ -1,1 +1,55 @@
 /* You can add global styles to this file, and also import other style files */
+
+.accordion {
+    overflow: hidden;
+}
+.card {
+    background-color: #fff;
+}
+.card-header {
+    text-transform: capitalize;
+    font-size: 1.8rem;
+    font-weight: 600;
+    line-height: 1;
+    color: #222;
+}
+.card-header a {
+    display: flex;
+    align-items: center;
+    position: relative;
+    padding: 1.8rem .5rem;
+}
+.card-header a::after {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: .5rem;
+    font-family: "riode";
+    font-size: 1.8rem;
+    font-weight: 400;
+    letter-spacing: -.01em;
+    color: #222;
+}
+
+.expand::after {
+    content: '\e953';
+}
+.collapse::after {
+    content: '\e952';
+}
+.accordion-simple .card {
+    border-top: 1px solid #e1e1e1;
+}
+.accordion .collapsed, .accordion .expanding {
+    display: none;
+}
+.card-body {
+    padding: 1.3rem .5rem;
+}
+.product-single .accordion ul {
+    list-style: none;
+    padding-left: 0;
+}
+.card-header .collapse {
+    color: #f6a800;
+}
