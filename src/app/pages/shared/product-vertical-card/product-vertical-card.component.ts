@@ -11,24 +11,14 @@ export class ProductVerticalCardComponent implements OnInit {
 
   @Input() product: any;
 
-  featuredProducts: any = [];
-
-  constructor(private _productService: ProductService,
-    private _cartService: CartService) { }
+  constructor(private _cartService: CartService) { }
 
   ngOnInit(): void {
-    this.featuredProducts = this._productService.getFeaturedProducts();
   }
 
 
-  addToCart(prodId) {
-    console.log("click");
-    this.featuredProducts.forEach(p => {
-      if (p.id == prodId) {
-        p.qty = 1;
-        this._cartService.setCartProducts(p);
-      }
-    });
+  addToCart(product : any) {
+    this._cartService.setCartProducts(product);
   }
 
 }

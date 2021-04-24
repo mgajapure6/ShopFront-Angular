@@ -1,7 +1,7 @@
 <div class="product product-list">
     <figure class="product-media">
-        <a href="product.html">
-            <img src="assets/images/shop/13.jpg" alt="product" width="260" height="293">
+        <a href="#" [routerLink]="['/product-detail',product.id]">
+            <img [src]="product.images[0]" alt="product" width="260" height="293">
         </a>
         <div class="product-label-group">
             <label class="product-label label-new">new</label>
@@ -9,28 +9,26 @@
     </figure>
     <div class="product-details">
         <div class="product-cat">
-            <a href="shop-grid-3col.html">Clothing</a>
+            <a href="#">{{product.category}}</a>
         </div>
         <h3 class="product-name">
-            <a href="product.html">Women Red Fur Overcoat</a>
+            <a href="#" [routerLink]="['/product-detail',product.id]">{{product.name}}</a>
         </h3>
         <div class="product-price">
-            <span class="price">$184.00</span>
+            <span class="price">Rs. {{product.price}}</span>
         </div>
         <div class="ratings-container">
             <div class="ratings-full">
                 <span class="ratings" style="width:80%"></span>
                 <span class="tooltiptext tooltip-top"></span>
             </div>
-            <a href="product.html" class="rating-reviews">( 6 reviews )</a>
+            <a href="#" class="rating-reviews">( 6 reviews )</a>
         </div>
         <p class="product-short-desc">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-            tempor
-            incididunt ut labore et dolore magna aliqua.
+            {{product.desc}}
         </p>
         <div class="product-action">
-            <a href="#" class="btn-product btn-cart" title="Add to cart" (click)="addToCart(product.id)"><i
+            <a href="#" class="btn-product btn-cart" title="Add to cart" (click)="addToCart(product)"><i
                     class="d-icon-bag"></i><label>Add to cart</label></a>
             <a href="#" class="btn-product-icon btn-wishlist" title="Add to wishlist"><i
                     class="d-icon-heart"></i></a>

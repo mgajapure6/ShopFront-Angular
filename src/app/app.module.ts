@@ -20,6 +20,7 @@ import { ProductVerticalCardComponent } from './pages/shared/product-vertical-ca
 import { ProductHorizontalSmCardComponent } from './pages/shared/product-horizontal-sm-card/product-horizontal-sm-card.component';
 import { CartPopupComponent } from './shared/cart-popup/cart-popup.component';
 import { CartProductCardComponent } from './shared/cart-popup/cart-product-card/cart-product-card.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -44,7 +45,8 @@ import { CartProductCardComponent } from './shared/cart-popup/cart-product-card/
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

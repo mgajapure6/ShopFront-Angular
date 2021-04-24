@@ -12,8 +12,9 @@ import { UserDashboardComponent } from './pages/user-dashboard/user-dashboard.co
 const routes: Routes = [
   {path:"home", component:HomeComponent},
   {path:"product-list", component:ProductListComponent},
+  {path:"product-list/:category-id", component:ProductListComponent},
   {path:"shopping-cart", component:ShoppingCartComponent},
-  {path:"product-detail", component:ProductDetailComponent},
+  {path:"product-detail/:product-id", component:ProductDetailComponent},
   {path:"checkout", component:CheckoutComponent},
   {path:"login", component:LoginComponent},
   {path:"registration", component:RegistrationComponent},

@@ -27,18 +27,64 @@ export class CartService {
     return this.cartProducts.asObservable();
   }
 
+  isProductExist(prodId : number): boolean{
+    let currentCartProducts = this.cartProducts.getValue() as any[];
+    let isExist = false;
+    for (let i = 0; i < currentCartProducts.length; i++) {
+      if (currentCartProducts[i].id == prodId) {
+        isExist = true;
+      }
+    }
+    return isExist;
+  }
+
+  updateQuantityOfProduct(prodId : number, qty : number){
+    let cartValue = 0;
+    let currentCartProducts = this.cartProducts.getValue() as any[];
+    for (let i = 0; i < currentCartProducts.length; i++) {
+      if (currentCartProducts[i].id == prodId) {
+        currentCartProducts[i].qty = currentCartProducts[i].qty + qty;
+      }
+    }
+    currentCartProducts.forEach(p => {
+      cartValue = cartValue + (p.qty * p.price);
+    });
+    this.cartTotValue.next(cartValue);
+    this.cartCount.next(currentCartProducts.length);
+    this.cartProducts.next(currentCartProducts);
+  }
+
+  removeQuantityOfProduct(prodId : number, qty : number){
+    let cartValue = 0;
+    let currentCartProducts = this.cartProducts.getValue() as any[];
+    for (let i = 0; i < currentCartProducts.length; i++) {
+      if (currentCartProducts[i].id == prodId) {
+        if(currentCartProducts[i].qty > qty){
+          currentCartProducts[i].qty = currentCartProducts[i].qty - qty;
+        }
+      }
+    }
+    currentCartProducts.forEach(p => {
+      cartValue = cartValue + (p.qty * p.price);
+    });
+    this.cartTotValue.next(cartValue);
+    this.cartCount.next(currentCartProducts.length);
+    this.cartProducts.next(currentCartProducts);
+  }
+
   setCartProducts(product: any): void {
     //console.log("setCartProducts",product);
     let currentCartProducts = this.cartProducts.getValue() as any[];
-    console.log("currentCartProducts", currentCartProducts);
     let isExist = false;
     currentCartProducts.forEach(p => {
       if(p.id==product.id){
-        p.qty = p.qty + 1;
+        p.qty += 1;
+        //p.qty = product.qty && (product.qty > 1) ? (product.qty + p.qty) : (p.qty + 1); //p.qty + 1;
         isExist = true;
       }
     });
     if(!isExist){
+      product.qty = product.qty > 1 ? product.qty : 1;
       currentCartProducts.push(product);
     }
     let cartValue = 0;
@@ -64,5 +110,11 @@ export class CartService {
     this.cartTotValue.next(cartValue);
     this.cartCount.next(currentCartProducts.length);
     this.cartProducts.next(currentCartProducts);
+  }
+
+  emptyCart() : void{
+    this.cartTotValue.next(0);
+    this.cartCount.next(0);
+    this.cartProducts.next([]);
   }
 }

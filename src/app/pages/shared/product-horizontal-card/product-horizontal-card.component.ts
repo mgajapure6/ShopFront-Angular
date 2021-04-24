@@ -1,5 +1,6 @@
 import { CartService } from './../../../services/cart.service';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { ProductService } from 'src/app/services/product.service';
 
 @Component({
   selector: 'app-product-horizontal-card',
@@ -8,15 +9,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProductHorizontalCardComponent implements OnInit {
 
-  product : any;
+  @Input() product: any;
+
+  
 
   constructor(private _cartService : CartService) { }
 
   ngOnInit(): void {
   }
 
-  addToCart(prodId){
-
+  addToCart(product : any){
+    this._cartService.setCartProducts(product);
   }
 
 }
