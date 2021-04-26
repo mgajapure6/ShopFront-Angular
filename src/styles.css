@@ -53,3 +53,10 @@
 .card-header .collapse {
     color: #f6a800;
 }
+
+.btn:disabled{
+    cursor: not-allowed !important;
+    background-color: #ccc !important;
+    border-color: #ccc !important;
+    color: #ececec !important;
+}

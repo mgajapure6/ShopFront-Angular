@@ -1,0 +1,23 @@
+.quantity-input{
+    line-height: 1; 
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    border: .5px solid #dedede99;
+}
+
+/* td.product-thumbnail{
+    max-width: 100px;
+    width: 100px;
+} */
+
+.product-name-section{
+    margin-left: 10px;
+}
+
+.product-desc{
+    color: #a2a1a1;
+    font-size: 1.2rem;
+    font-weight: 400;
+}
+

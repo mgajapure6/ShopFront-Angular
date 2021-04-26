@@ -1,0 +1,8 @@
+.center-box{
+    display: flex;
+    justify-content: center;
+}
+
+.login-popup{
+    width: 490px;
+}

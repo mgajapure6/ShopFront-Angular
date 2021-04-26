@@ -13,7 +13,27 @@ export class CartService {
   private cartTotValue = new BehaviorSubject<number>(0);
 
 
-  constructor() { }
+  constructor() { 
+    let localStoreCart = this.getLocalStoreCart();
+    if(localStoreCart){
+      let cartValue : number=0;
+      for(let p of localStoreCart){
+        cartValue = cartValue + (p.qty * p.price);
+      }
+      console.log("constructor cartValue",cartValue);
+      this.cartTotValue.next(cartValue);
+      this.cartCount.next(localStoreCart.length);
+      this.cartProducts.next(localStoreCart);
+    }
+
+  }
+
+  getLocalStoreCart(){
+    return JSON.parse(localStorage.getItem("cart"));
+  }
+  setLocalStoreCart(cart : any){
+    localStorage.setItem("cart",JSON.stringify(cart));
+  }
 
   getCartCount(): Observable<number> {
     return this.cartCount.asObservable();
@@ -52,6 +72,7 @@ export class CartService {
     this.cartTotValue.next(cartValue);
     this.cartCount.next(currentCartProducts.length);
     this.cartProducts.next(currentCartProducts);
+    this.setLocalStoreCart(currentCartProducts);
   }
 
   removeQuantityOfProduct(prodId : number, qty : number){
@@ -70,6 +91,7 @@ export class CartService {
     this.cartTotValue.next(cartValue);
     this.cartCount.next(currentCartProducts.length);
     this.cartProducts.next(currentCartProducts);
+    this.setLocalStoreCart(currentCartProducts);
   }
 
   setCartProducts(product: any): void {
@@ -94,6 +116,7 @@ export class CartService {
     this.cartTotValue.next(cartValue);
     this.cartCount.next(currentCartProducts.length);
     this.cartProducts.next(currentCartProducts);
+    this.setLocalStoreCart(currentCartProducts);
   }
 
   removeCartProduct(prodId: number): void {
@@ -110,11 +133,13 @@ export class CartService {
     this.cartTotValue.next(cartValue);
     this.cartCount.next(currentCartProducts.length);
     this.cartProducts.next(currentCartProducts);
+    this.setLocalStoreCart(currentCartProducts);
   }
 
   emptyCart() : void{
     this.cartTotValue.next(0);
     this.cartCount.next(0);
     this.cartProducts.next([]);
+    localStorage.removeItem("cart");
   }
 }

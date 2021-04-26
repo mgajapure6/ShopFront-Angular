@@ -1,3 +1,4 @@
+import { AuthGuardService as AuthGuard} from './guard/auth-guard.service';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './pages/home/home.component';
@@ -16,15 +17,17 @@ const routes: Routes = [
   {path:"shopping-cart", component:ShoppingCartComponent},
   {path:"product-detail/:product-id", component:ProductDetailComponent},
   {path:"checkout", component:CheckoutComponent},
+  {path:"order-complete", component:CheckoutComponent},
   {path:"login", component:LoginComponent},
   {path:"registration", component:RegistrationComponent},
-  {path:"user-dashboard", component:UserDashboardComponent},
+  {path:"user-dashboard", component:UserDashboardComponent, canActivate: [AuthGuard]},
   {path:"", redirectTo:"home", pathMatch:"full"},
   {path:"**", redirectTo:"home", pathMatch:"full"}
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
+  providers:[]
 })
 export class AppRoutingModule { }

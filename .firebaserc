@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "ang-shop-9efe1": {
+      "hosting": {
+        "shop": [
+          "ang-shop-9efe1"
+        ]
+      }
+    }
+  }
+}

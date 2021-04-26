@@ -5,205 +5,50 @@ import { Injectable } from '@angular/core';
   providedIn: 'root',
 })
 export class ProductService {
-  product_list: any = [
-    {
-      id: 1,
-      name: 'Hand Electric Cell',
-      cutPrice: 50,
-      price: 30,
-      rating: 4,
-      category: 'Electricals',
-      categoryId: 1,
-      desc:
-        'Sed egestas, ante et vulputate volutpat, eros pede semper est, vitae luctus metus libero eu augue. Morbi purus liberpuro ate vol faucibus adipiscing.',
-      subCategory: 'Batteries',
-      images: ['assets/images/demos/demo3/products/1.jpg'],
-    },
-    {
-      id: 2,
-      name: "Men's Fashion Hood",
-      cutPrice: 700,
-      price: 300,
-      rating: 4.5,
-      category: 'Clothing',
-      categoryId: 2,
-      desc:
-        'Sed egestas, ante et vulputate volutpat, eros pede semper est, vitae luctus metus libero eu augue. Morbi purus liberpuro ate vol faucibus adipiscing.',
-      subCategory: 'Mens',
-      images: ['assets/images/demos/demo3/products/2.jpg'],
-    },
-    {
-      id: 3,
-      name: "Women's Fashion T-shirt",
-      cutPrice: 500,
-      price: 400,
-      rating: 5,
-      category: 'Clothing',
-      categoryId: 2,
-      desc:
-        'Sed egestas, ante et vulputate volutpat, eros pede semper est, vitae luctus metus libero eu augue. Morbi purus liberpuro ate vol faucibus adipiscing.',
-      subCategory: 'Womens',
-      images: ['assets/images/demos/demo3/products/3.jpg'],
-    },
-    {
-      id: 4,
-      name: 'Hand Electric Cell',
-      cutPrice: 50,
-      price: 30,
-      rating: 4,
-      category: 'Electricals',
-      categoryId: 1,
-      desc:
-        'Sed egestas, ante et vulputate volutpat, eros pede semper est, vitae luctus metus libero eu augue. Morbi purus liberpuro ate vol faucibus adipiscing.',
-      subCategory: 'Batteries',
-      images: ['assets/images/demos/demo3/products/4.jpg'],
-    },
-    {
-      id: 5,
-      name: "Men's Fashion Hood",
-      cutPrice: 700,
-      price: 300,
-      rating: 4.5,
-      category: 'Clothing',
-      categoryId: 2,
-      desc:
-        'Sed egestas, ante et vulputate volutpat, eros pede semper est, vitae luctus metus libero eu augue. Morbi purus liberpuro ate vol faucibus adipiscing.',
-      subCategory: 'Mens',
-      images: ['assets/images/demos/demo3/products/5.jpg'],
-    },
-    {
-      id: 6,
-      name: "Women's Fashion T-shirt",
-      cutPrice: 500,
-      price: 400,
-      rating: 5,
-      category: 'Clothing',
-      categoryId: 2,
-      desc:
-        'Sed egestas, ante et vulputate volutpat, eros pede semper est, vitae luctus metus libero eu augue. Morbi purus liberpuro ate vol faucibus adipiscing.',
-      subCategory: 'Womens',
-      images: ['assets/images/demos/demo3/products/6.jpg'],
-    },
-    {
-      id: 7,
-      name: "Women's Fashion T-shirt",
-      cutPrice: 500,
-      price: 400,
-      rating: 5,
-      category: 'Clothing',
-      categoryId: 2,
-      desc:
-        'Sed egestas, ante et vulputate volutpat, eros pede semper est, vitae luctus metus libero eu augue. Morbi purus liberpuro ate vol faucibus adipiscing.',
-      subCategory: 'Womens',
-      images: ['assets/images/demos/demo3/products/7.jpg'],
-    },
-    {
-      id: 8,
-      name: "Women's Fashion T-shirt",
-      cutPrice: 500,
-      price: 400,
-      rating: 5,
-      category: 'Clothing',
-      categoryId: 2,
-      desc:
-        'Sed egestas, ante et vulputate volutpat, eros pede semper est, vitae luctus metus libero eu augue. Morbi purus liberpuro ate vol faucibus adipiscing.',
-      subCategory: 'Womens',
-      images: ['assets/images/demos/demo3/products/8.jpg'],
-    },
-    {
-      id: 9,
-      name: "Women's Fashion T-shirt",
-      cutPrice: 500,
-      price: 400,
-      rating: 5,
-      category: 'Clothing',
-      categoryId: 2,
-      desc:
-        'Sed egestas, ante et vulputate volutpat, eros pede semper est, vitae luctus metus libero eu augue. Morbi purus liberpuro ate vol faucibus adipiscing.',
-      subCategory: 'Womens',
-      images: ['assets/images/demos/demo3/products/9.jpg'],
-    },
-    {
-      id: 10,
-      name: "Women's Fashion T-shirt",
-      cutPrice: 500,
-      price: 400,
-      rating: 5,
-      category: 'Clothing',
-      categoryId: 2,
-      desc:
-        'Sed egestas, ante et vulputate volutpat, eros pede semper est, vitae luctus metus libero eu augue. Morbi purus liberpuro ate vol faucibus adipiscing.',
-      subCategory: 'Womens',
-      images: ['assets/images/demos/demo3/products/10.jpg'],
-    },
-    {
-      id: 11,
-      name: "Women's Fashion T-shirt",
-      cutPrice: 500,
-      price: 400,
-      rating: 5,
-      category: 'Clothing',
-      categoryId: 2,
-      desc:
-        'Sed egestas, ante et vulputate volutpat, eros pede semper est, vitae luctus metus libero eu augue. Morbi purus liberpuro ate vol faucibus adipiscing.',
-      subCategory: 'Womens',
-      images: ['assets/images/demos/demo3/products/11.jpg'],
-    },
-    {
-      id: 12,
-      name: "Women's Fashion T-shirt",
-      cutPrice: 500,
-      price: 400,
-      rating: 5,
-      category: 'Clothing',
-      categoryId: 2,
-      desc:
-        'Sed egestas, ante et vulputate volutpat, eros pede semper est, vitae luctus metus libero eu augue. Morbi purus liberpuro ate vol faucibus adipiscing.',
-      subCategory: 'Womens',
-      images: ['assets/images/demos/demo3/products/12.jpg'],
-    },
-    {
-      id: 13,
-      name: "Women's Fashion T-shirt",
-      cutPrice: 500,
-      price: 400,
-      rating: 5,
-      category: 'Clothing',
-      categoryId: 2,
-      desc:
-        'Sed egestas, ante et vulputate volutpat, eros pede semper est, vitae luctus metus libero eu augue. Morbi purus liberpuro ate vol faucibus adipiscing.',
-      subCategory: 'Womens',
-      images: ['assets/images/demos/demo3/products/13.jpg'],
-    },
-    {
-      id: 14,
-      name: "Women's Fashion T-shirt",
-      cutPrice: 500,
-      price: 400,
-      rating: 5,
-      category: 'Clothing',
-      categoryId: 2,
-      desc:
-        'Sed egestas, ante et vulputate volutpat, eros pede semper est, vitae luctus metus libero eu augue. Morbi purus liberpuro ate vol faucibus adipiscing.',
-      subCategory: 'Womens',
-      images: ['assets/images/demos/demo3/products/14.jpg'],
-    },
-    {
-      id: 15,
-      name: "Women's Fashion T-shirt",
-      cutPrice: 500,
-      price: 400,
-      rating: 5,
-      category: 'Clothing',
-      categoryId: 2,
-      desc:
-        'Sed egestas, ante et vulputate volutpat, eros pede semper est, vitae luctus metus libero eu augue. Morbi purus liberpuro ate vol faucibus adipiscing.',
-      subCategory: 'Womens',
-      images: ['assets/images/demos/demo3/products/15.jpg'],
-    },
-  ];
+  product_list: any = [];
 
-  constructor() {}
+  constructor() {
+    for(let i = 0; i<17;i++){
+      let p = {
+        id: (i+1),
+        name: 'Product '+(i+1),
+        cutPrice: i*i+(100),
+        price: i*i+(55),
+        rating: 4,
+        category: 'Electricals '+(i+1),
+        categoryId: (i+1),
+        desc:
+          'Sed egestas, ante et vulputate volutpat, eros pede semper est, vitae luctus metus libero eu augue. Morbi purus liberpuro ate vol faucibus adipiscing.',
+        subCategory: 'Batteries '+(i+1),
+        subCategoryId: (i+1),
+        images: ['assets/images/demos/demo3/products/'+(i+1)+'.jpg',
+        'assets/images/demos/demo3/products/2.jpg',
+        'assets/images/demos/demo3/products/3.jpg',
+        'assets/images/demos/demo3/products/4.jpg'],
+        reviews : [
+          {
+            username : "User "+(i+1),
+            comment : "Very Good Product. Fast Delivery.",
+            rating : 4,
+            time : (i+1)+"/10/2020"
+          },
+          {
+            username : "User "+(i+1),
+            comment : "Nice product",
+            rating : 3,
+            time : (i+1)+"/11/2020"
+          },
+          {
+            username : "User "+(i+1),
+            comment : "Poor",
+            rating : 2,
+            time : (i+1)+"/01/2021"
+          }
+        ]
+      };
+      this.product_list.push(p);
+    }
+  }
 
   getPopularProducts(): Product[] {
     let pList: any = [];
@@ -275,5 +120,13 @@ export class ProductService {
       }
     }
     return product;
+  }
+
+  getLimitedProducts(limit : number){
+    let plist : any = [];
+    for(let i=0; i< limit;i++){
+      plist.push(this.product_list[i]);
+    }
+    return plist;
   }
 }

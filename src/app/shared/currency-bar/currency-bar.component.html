@@ -33,10 +33,19 @@
                 <i class="d-icon-map"></i>Contact</a>
             <a href="#" class="help d-lg-show">
                 <i class="d-icon-info"></i> Need Help</a>
-            <a class="login-link" href="assets/ajax/login.html" data-toggle="login-modal">
-                <i class="d-icon-user"></i>Sign in</a>
-            <span class="delimiter">/</span>
-            <a class="register-link ml-0" href="assets/ajax/login.html" data-toggle="login-modal">Register</a>
+            <ng-container *ngIf="isLoggedIn">
+                    <a class="ml-3" href="#" routerLink="/user-dashboard"><i class="d-icon-user mr-1"></i>Hello, {{loggedUser.name}}</a>
+                    <span class="delimiter">/</span>
+                    <a class="ml-0" href="#" routerLink="/user-dashboard">My Account</a>
+                    <a class="ml-3" href="javascript:;" (click)="logout()">logout</a>
+            </ng-container>
+            <ng-container *ngIf="!isLoggedIn">
+                    <a class="ml-3" href="#" routerLink="/login">
+                        <i class="d-icon-user mr-1"></i>Sign in</a>
+                    <!-- <span class="delimiter">/</span>
+                    <a class="ml-0" href="#" routerLink="/login">Register</a> -->
+                </ng-container>
+            
             <!-- End of Login -->
         </div>
     </div>
