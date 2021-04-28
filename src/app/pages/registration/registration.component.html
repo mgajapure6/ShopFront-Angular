@@ -1,1 +1,47 @@
-<p>registration works!</p>
+<div class="center-box">
+    <div class="login-popup">
+        <h4>Register yourself</h4>
+        <hr>
+        <form [formGroup]="registerForm" (ngSubmit)="saveUser()" novalidate>
+            <div class="form-group mb-3">
+                <input type="email" formControlName="email" class="form-control" id="register-email" name="register-email" placeholder="Your Email Address *"
+                    required />
+                <small *ngIf="control.email.touched && !control.email.valid">Please enter your email</small>
+            </div>
+            <div class="form-group">
+                <input type="password" formControlName="password" class="form-control" id="register-password" name="register-password" placeholder="Password *"
+                    required />
+                <small *ngIf="control.password.touched && !control.password.valid">Please enter your password</small>
+            </div>
+            <div class="form-group">
+                <input type="password" formControlName="confirmPassword" class="form-control" id="register-password" name="register-password"
+                    placeholder="Confirm Password *" required />
+                <small *ngIf="control.password.touched && !control.password.valid">Please confirm your password</small>
+            </div>
+            <div class="form-group mb-3">
+                <input type="text" formControlName="name" class="form-control" id="register-name" name="register-name" placeholder="Your Full Name *"
+                    required />
+                <small *ngIf="control.name.touched && !control.name.valid">Please enter your name</small>
+            </div>
+            <div class="form-group mb-3">
+                <input type="text" formControlName="phone" class="form-control" id="register-phone" name="register-phone" placeholder="Your Mobile Number *"
+                    required />
+                <small *ngIf="control.phone.touched && !control.phone.valid">Please enter your phone no.</small>
+            </div>
+            <div class="form-footer">
+                <div class="form-checkbox">
+                    <input type="checkbox" formControlName="privacyPolicyCheck" class="custom-checkbox" id="register-agree" name="register-agree"
+                        required />
+                    <label class="form-control-label" for="register-agree">I agree to the privacy policy</label>
+                </div>
+                <small *ngIf="!control.privacyPolicyCheck.valid">Please check privacy policy.</small>
+            </div>
+            <div class="alert-container mb-3" id="ralertContainer"></div>
+            <button class="btn btn-dark btn-block btn-rounded" type="submit" [disabled]="!registerForm.valid">Register</button>
+        </form>
+        <div class="form-choice mt-3">
+                <a href="#" class="" routerLink="/login">Already have account ? Login here </a>
+            </div>
+    </div>
+
+</div>

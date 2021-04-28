@@ -25,6 +25,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFireAuthModule } from "@angular/fire/auth";
 import { AngularFirestoreModule } from '@angular/fire/firestore';
+import { SETTINGS as AUTH_SETTINGS } from '@angular/fire/auth';
 
 @NgModule({
   declarations: [
@@ -56,7 +57,8 @@ import { AngularFirestoreModule } from '@angular/fire/firestore';
     AngularFireAuthModule,
     AngularFirestoreModule
   ],
-  providers: [],
+  providers: [
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,3 +1,4 @@
+import { AuthService } from './../firebase/auth.service';
 import { UserService } from './../services/user.service';
 import { Injectable } from '@angular/core';
 import { CanActivate, Router } from '@angular/router';
@@ -7,14 +8,14 @@ import { CanActivate, Router } from '@angular/router';
 })
 export class AuthGuardService implements CanActivate {
 
-  constructor(private _userService: UserService,
+  constructor(private _authService: AuthService,
     private router: Router) { }
 
   canActivate(): boolean {
-    if (this._userService.isLoggedIn()) {
+    if (this._authService.isLoggedIn){
       return true;
     }
-    this.router.navigate(['login']);
+    this.router.navigate(['/login']);
     return false;
 
   }

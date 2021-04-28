@@ -1,3 +1,4 @@
+import { AuthService } from './../firebase/auth.service';
 import { Observable } from 'rxjs/internal/Observable';
 import { BehaviorSubject } from 'rxjs/internal/BehaviorSubject';
 import { ProductService } from './product.service';
@@ -13,7 +14,8 @@ export class UserService {
   private isUserLoggedIn = new BehaviorSubject<boolean>(false);
   private loggedUser =  new BehaviorSubject<any>(null);
 
-  constructor(private _productService: ProductService) {
+  constructor(private _productService: ProductService,
+    private _authService : AuthService) {
     for (let i = 0; i <= 20; i++) {
       let u = {
         id: (i + 1),
@@ -92,26 +94,34 @@ export class UserService {
     this.loggedUser.next(null);
   }
 
-  login(username: string, password: string): boolean {
-    let isValidUser = false;
-    for (let u of this.users) {
-      if (u.username == username && u.username == password) {
-        isValidUser = true;
-        localStorage.setItem("user", JSON.stringify(u));
-        this.isUserLoggedIn.next(true);
-        this.loggedUser.next(u);
-      }
-    }
-    if(!isValidUser){
-      localStorage.removeItem("user");
-      this.isUserLoggedIn.next(false);
-      this.loggedUser.next(null);
-    }
-    return isValidUser;
+  login(email: string, password: string) : Promise<any> {
+    //let isValidUser = false;
+    return this._authService.signIn(email,password);
+    // .then(res=>{
+    //   console.log("res:",res);
+    // }).catch(err=>{
+    //   console.log("err:",err);
+    // });
+
+    // console.log("xxx:",xxx);
+    // for (let u of this.users) {
+    //   if (u.email == email && u.username == password) {
+    //     isValidUser = true;
+    //     localStorage.setItem("user", JSON.stringify(u));
+    //     this.isUserLoggedIn.next(true);
+    //     this.loggedUser.next(u);
+    //   }
+    // }
+    // if(!isValidUser){
+    //   localStorage.removeItem("user");
+    //   this.isUserLoggedIn.next(false);
+    //   this.loggedUser.next(null);
+    // }
+    // return isValidUser;
   }
 
-  registerUser() {
-
+  registerUser(user : any) {
+    return this._authService.signUp(user);
   }
 
   updateUser(user : any, uid: number) {

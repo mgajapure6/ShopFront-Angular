@@ -9,6 +9,7 @@ import { CheckoutComponent } from './pages/checkout/checkout.component';
 import { LoginComponent } from './pages/login/login.component';
 import { RegistrationComponent } from './pages/registration/registration.component';
 import { UserDashboardComponent } from './pages/user-dashboard/user-dashboard.component';
+import { AngularFireAuthGuard } from '@angular/fire/auth-guard';
 
 const routes: Routes = [
   {path:"home", component:HomeComponent},
@@ -22,6 +23,7 @@ const routes: Routes = [
   {path:"registration", component:RegistrationComponent},
   {path:"user-dashboard", component:UserDashboardComponent, canActivate: [AuthGuard]},
   {path:"", redirectTo:"home", pathMatch:"full"},
+  //{path:"/", redirectTo:"home", pathMatch:"full"},
   {path:"**", redirectTo:"home", pathMatch:"full"}
 ];
 
