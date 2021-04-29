@@ -1,4 +1,8 @@
 /* You can add global styles to this file, and also import other style files */
+@import url("~/angular-notifier/styles/core.css");
+@import url("~/angular-notifier/styles/theme");
+@import url("~/angular-notifier/styles/types");
+
 
 .accordion {
     overflow: hidden;

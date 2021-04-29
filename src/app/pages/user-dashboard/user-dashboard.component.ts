@@ -1,7 +1,6 @@
-import { AuthService } from './../../firebase/auth.service';
-import { UserService } from './../../services/user.service';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { UserService } from 'src/app/firebase/user.service';
 
 @Component({
   selector: 'app-user-dashboard',
@@ -10,15 +9,15 @@ import { Router } from '@angular/router';
 })
 export class UserDashboardComponent implements OnInit {
 
-  constructor(private _authService : AuthService,
+  constructor(private _userService : UserService,
   private router : Router ) { }
 
   ngOnInit(): void {
   }
 
   logout(){
-    this._authService.signOut();
-    this.router.navigateByUrl("/home");
+    this._userService.logout();
+    this.router.navigateByUrl("/login");
   }
 
 }

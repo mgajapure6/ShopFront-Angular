@@ -7,6 +7,7 @@ import {
   NavigationStart,
   Router,
 } from '@angular/router';
+import { UserService } from './firebase/user.service';
 
 @Component({
   selector: 'app-root',
@@ -20,6 +21,7 @@ export class AppComponent implements OnInit {
 
   constructor(private router: Router, 
     private _scriptService: ScriptService) {
+
     this.router.events.subscribe((event: Event) => {
       if (event instanceof NavigationStart) {
         // Show loading indicator

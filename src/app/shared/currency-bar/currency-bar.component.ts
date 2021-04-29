@@ -1,6 +1,6 @@
-import { UserService } from './../../services/user.service';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { UserService } from 'src/app/firebase/user.service';
 
 @Component({
   selector: 'app-currency-bar',

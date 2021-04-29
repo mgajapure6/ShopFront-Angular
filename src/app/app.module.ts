@@ -26,6 +26,7 @@ import { AngularFireModule } from '@angular/fire';
 import { AngularFireAuthModule } from "@angular/fire/auth";
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { SETTINGS as AUTH_SETTINGS } from '@angular/fire/auth';
+import { NotifierModule } from 'angular-notifier';
 
 @NgModule({
   declarations: [
@@ -55,7 +56,8 @@ import { SETTINGS as AUTH_SETTINGS } from '@angular/fire/auth';
     FormsModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireAuthModule,
-    AngularFirestoreModule
+    AngularFirestoreModule,
+    NotifierModule
   ],
   providers: [
   ],
